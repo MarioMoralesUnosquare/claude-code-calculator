@@ -113,3 +113,52 @@
 .btn--equals:hover {
   background: #ff6b81;
 }
+
+/* ── Theme toggle button ────────────────────────────────────────────────── */
+
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: #2d3561;
+  color: #a8b2ff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #3d4571;
+}
+
+/* ── Light mode overrides ───────────────────────────────────────────────── */
+/*
+  EXERCISE 3 — these rules are intentionally empty.
+  Once toggleTheme() is implemented, the 'light' class will be applied to
+  .calculator and :host. Fill in the color values to create the light theme.
+
+  Hint: pick light backgrounds (whites/grays) and dark text colors.
+*/
+
+:host.light {
+  /* TODO: change the page background to a light color */
+}
+
+.calculator.light {
+  /* TODO: change the calculator background to a light color */
+}
+
+.calculator.light .display {
+  /* TODO: change the display background and text color */
+}
+
+.calculator.light .btn {
+  /* TODO: change the button background and text color */
+}
+
+.calculator.light .btn--utility {
+  /* TODO: style the utility buttons for light mode */
+}

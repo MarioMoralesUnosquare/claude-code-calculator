@@ -30,6 +30,12 @@ export class AppComponent {
   operator: string | null = null;
 
   /**
+   * Tracks whether the UI is in light mode (true) or dark mode (false).
+   * The template uses this to conditionally apply the 'light' CSS class.
+   */
+  isLightMode: boolean = false;
+
+  /**
    * Flag that tells us "the user just pressed an operator, so the next
    * digit they type should start a fresh number on the display."
    */
@@ -113,6 +119,21 @@ export class AppComponent {
     this.firstOperand = null;
     this.operator = null;
     this.waitingForSecondOperand = false;
+  }
+
+  /**
+   * Called when the user clicks the light/dark toggle button.
+   * Should switch the UI between dark mode (default) and light mode.
+   *
+   * EXERCISE 3 ── implement this method.
+   *
+   * Hint: flip the value of this.isLightMode between true and false.
+   * The template already binds [class.light] to isLightMode, so the CSS
+   * will update automatically once you toggle the property.
+   */
+  toggleTheme(): void {
+    // TODO: implement me!
+    // Step 1 – flip this.isLightMode to its opposite value (use the ! operator)
   }
 
   /**

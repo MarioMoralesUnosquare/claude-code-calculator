@@ -50,6 +50,39 @@ Convert the displayed number into its percentage equivalent (divide by 100).
 
 ---
 
+### Exercise 3 — Light/Dark Theme Toggle (`toggleTheme`)
+
+**Files:**
+- `src/app/app.component.ts` — method `toggleTheme()`
+- `src/app/app.component.css` — light mode CSS rules
+
+**Button:** `🌙 Dark / ☀️ Light` (top-right corner)
+
+#### What it should do
+Switch the UI between dark mode (default) and light mode each time the button is clicked.
+
+| `isLightMode` before | `isLightMode` after | Button label |
+|----------------------|---------------------|--------------|
+| `false`              | `true`              | `☀️ Light`   |
+| `true`               | `false`             | `🌙 Dark`    |
+
+#### Step 1 — implement `toggleTheme()` in `app.component.ts`
+Flip `this.isLightMode` to its opposite value using the `!` (NOT) operator.  
+The template already binds `[class.light]="isLightMode"` so the CSS updates automatically.
+
+#### Step 2 — fill in the light mode CSS in `app.component.css`
+The selectors are already there with `TODO` comments. Choose colors that make the calculator readable on a light background. Suggested values to get started:
+
+| Selector | Property to set | Suggested value |
+|---|---|---|
+| `:host.light` | `background` | `#f0f0f0` |
+| `.calculator.light` | `background` | `#ffffff` |
+| `.calculator.light .display` | `background` / `color` | `#e0e0e0` / `#1a1a1a` |
+| `.calculator.light .btn` | `background` / `color` | `#d4d4d4` / `#1a1a1a` |
+| `.calculator.light .btn--utility` | `background` / `color` | `#c0c0c0` / `#333333` |
+
+---
+
 ## Part 2 — Write the missing unit tests
 
 **File:** `src/app/app.component.spec.ts`  

@@ -11,7 +11,19 @@
       Calls a method in the component when the user clicks the element.
 -->
 
-<div class="calculator">
+<!--
+  EXERCISE 3 — the toggle button below calls toggleTheme(), which you need to
+  implement in app.component.ts. When done, clicking it should switch the page
+  between dark mode (default) and light mode.
+
+  [class.light] is a conditional class binding — it adds the CSS class 'light'
+  to the host element whenever the 'isLightMode' property is true.
+-->
+<button class="theme-toggle" (click)="toggleTheme()">
+  {{ isLightMode ? '☀️ Light' : '🌙 Dark' }}
+</button>
+
+<div class="calculator" [class.light]="isLightMode">
 
   <!-- ── Display ─────────────────────────────────────────────────────────── -->
   <!--
