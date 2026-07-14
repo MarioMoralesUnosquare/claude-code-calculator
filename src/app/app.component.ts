@@ -132,8 +132,9 @@ export class AppComponent {
    * will update automatically once you toggle the property.
    */
   toggleTheme(): void {
-    // TODO: implement me!
-    // Step 1 – flip this.isLightMode to its opposite value (use the ! operator)
+    // Flip between light and dark mode. The template binds [class.light] to
+    // this property, so the CSS updates automatically.
+    this.isLightMode = !this.isLightMode;
   }
 
   /**
@@ -146,10 +147,11 @@ export class AppComponent {
    * Remember to handle the edge case where the display is '0'.
    */
   pressToggleSign(): void {
-    // TODO: implement me!
-    // Step 1 – convert this.display to a number
-    // Step 2 – multiply by -1
-    // Step 3 – assign the result back to this.display (as a string)
+    // Convert the display to a number and flip its sign.
+    const flipped = parseFloat(this.display) * -1;
+
+    // Edge case: keep '0' instead of showing '-0'.
+    this.display = flipped === 0 ? '0' : flipped.toString();
   }
 
   /**
@@ -161,10 +163,9 @@ export class AppComponent {
    * Hint: divide the current display value by 100, then update this.display.
    */
   pressPercent(): void {
-    // TODO: implement me!
-    // Step 1 – convert this.display to a number
-    // Step 2 – divide by 100
-    // Step 3 – assign the result back to this.display (as a string)
+    // Convert the display to a number and divide by 100 to get its percentage.
+    const percent = parseFloat(this.display) / 100;
+    this.display = percent.toString();
   }
 
 
